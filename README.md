@@ -1,37 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ระบบสมัครสอบวัดระดับความสามารถทางวิทยาศาสตร์และคณิตศาสตร์
 
-## Getting Started
+ระบบจัดการการสมัครสอบสำหรับนักเรียนชั้นมัธยมศึกษาตอนปลาย พัฒนาด้วย Next.js, TypeScript และ Tailwind CSS
 
-First, run the development server:
+## คุณสมบัติหลัก
 
+- 📝 ระบบลงทะเบียนสมัครสอบ
+- 📊 Dashboard แสดงภาพรวมข้อมูล
+- 📋 ตารางแสดงรายชื่อผู้สมัคร
+- 🗑️ ระบบจัดการข้อมูลผู้สมัคร
+- 📱 Responsive Design รองรับทุกอุปกรณ์
+
+## เทคโนโลยีที่ใช้
+
+- **Frontend:**
+  - Next.js 14
+  - TypeScript
+  - Tailwind CSS
+  - React Hooks
+
+- **Backend:**
+  - Next.js API Routes
+  - PostgreSQL
+  - Prisma ORM
+
+## การติดตั้ง
+
+1. Clone โปรเจค:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd <project-name>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. ติดตั้ง dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. ตั้งค่าไฟล์ .env:
+```env
+DATABASE_URL="postgresql://username:password@localhost:5432/dbname?schema=public"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. สร้างฐานข้อมูลและ Prisma client:
+```bash
+npx prisma migrate dev
+npx prisma generate
+```
 
-## Learn More
+5. รันโปรเจคในโหมด development:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## การใช้งานระบบ
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### การสมัครสอบ
+1. กรอกข้อมูลส่วนตัว:
+   - ชื่อ-นามสกุล
+   - ระดับชั้น
+   - ข้อมูลโรงเรียน
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. เลือกวิชาที่ต้องการสอบ:
+   - คณิตศาสตร์
+   - ฟิสิกส์
+   - เคมี
+   - ชีววิทยา
 
-## Deploy on Vercel
+3. เลือกสนามสอบ:
+   - นครราชสีมา
+   - สุรินทร์
+   - บุรีรัมย์
+   - ชัยภูมิ
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### การจัดการข้อมูล
+1. Dashboard:
+   - แสดงภาพรวมจำนวนผู้สมัคร
+   - สถิติแยกตามระดับชั้น
+   - สถิติแยกตามสนามสอบ
+   - สถิติแยกตามวิชา
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# sut_lab
+2. ตารางข้อมูล:
+   - แสดงรายชื่อผู้สมัครทั้งหมด
+   - ค้นหาและกรองข้อมูล
+
+## API Endpoints
+
+### GET /api/registrations
+- ดึงข้อมูลผู้สมัครทั้งหมด
+
+### POST /api/registrations
+- สร้างข้อมูลการสมัครใหม่
+
+## การสนับสนุน
+
+หากพบปัญหาหรือต้องการความช่วยเหลือ สามารถติดต่อได้ที่:
+- Email: [kitinun.khonson@gmail.com]
+
+## License
+
+[MIT License](LICENSE)
