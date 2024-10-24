@@ -38,7 +38,7 @@ npm install
 
 3. ตั้งค่าไฟล์ .env:
 ```env
-DATABASE_URL="postgresql://username:password@localhost:5432/dbname?schema=public"
+DATABASE_URL="postgresql://gun_kitinun:khonson2541@localhost:5432/sut_db?schema=public"
 ```
 
 4. สร้างฐานข้อมูลและ Prisma client:
